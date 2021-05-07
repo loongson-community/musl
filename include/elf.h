@@ -696,6 +696,10 @@ typedef struct {
 #define NT_MIPS_FP_MODE	0x801
 #define NT_MIPS_MSA	0x802
 #define NT_VERSION	1
+#define NT_LOONGARCH_CPUCFG     0x900           /* Loongarch CPU config registers */
+#define NT_LOONGARCH_LBT        0x901           /* Loongarch Loongson Binary Translation registers */
+#define NT_LOONGARCH_LSX        0x902           /* Loongarch Loongson SIMD Extension registers */
+#define NT_LOONGARCH_LASX       0x903           /* Loongarch Loongson Advanced SIMD Extension registers */
 
 
 
@@ -3286,6 +3290,67 @@ enum
 #define R_RISCV_SET16           55
 #define R_RISCV_SET32           56
 #define R_RISCV_32_PCREL        57
+
+/* LoongISA ELF Flags */
+#define EM_LOONGARCH  258
+#define EF_LOONGARCH_ABI             0x0003
+#define EF_LOONGARCH_ABI_LP64        0x0003
+#define EF_LOONGARCH_ABI_LPX32       0x0002
+#define EF_LOONGARCH_ABI_LP32        0x0001
+
+/* Loongarch specific dynamic relocations. */
+#define R_LOONGARCH_NONE                        0
+#define R_LOONGARCH_32                          1
+#define R_LOONGARCH_64                          2
+#define R_LOONGARCH_RELATIVE                    3
+#define R_LOONGARCH_COPY                        4
+#define R_LOONGARCH_JUMP_SLOT                   5
+#define R_LOONGARCH_TLS_DTPMOD32                6
+#define R_LOONGARCH_TLS_DTPMOD64                7
+#define R_LOONGARCH_TLS_DTPREL32                8
+#define R_LOONGARCH_TLS_DTPREL64                9
+#define R_LOONGARCH_TLS_TPREL32                 10
+#define R_LOONGARCH_TLS_TPREL64                 11
+#define R_LOONGARCH_IRELATIVE                   12
+#define R_LOONGARCH_MARK_LA                     20
+#define R_LOONGARCH_MARK_PCREL                  21
+#define R_LOONGARCH_SOP_PUSH_PCREL              22
+#define R_LOONGARCH_SOP_PUSH_ABSOLUTE           23
+#define R_LOONGARCH_SOP_PUSH_DUP                24
+#define R_LOONGARCH_SOP_PUSH_GPREL              25
+#define R_LOONGARCH_SOP_PUSH_TLS_TPREL          26
+#define R_LOONGARCH_SOP_PUSH_TLS_GOT            27
+#define R_LOONGARCH_SOP_PUSH_TLS_GD             28
+#define R_LOONGARCH_SOP_PUSH_PLT_PCREL          29
+#define R_LOONGARCH_SOP_ASSERT                  30
+#define R_LOONGARCH_SOP_NOT                     31
+#define R_LOONGARCH_SOP_SUB                     32
+#define R_LOONGARCH_SOP_SL                      33
+#define R_LOONGARCH_SOP_SR                      34
+#define R_LOONGARCH_SOP_ADD                     35
+#define R_LOONGARCH_SOP_AND                     36
+#define R_LOONGARCH_SOP_IF_ELSE                 37
+#define R_LOONGARCH_SOP_POP_32_S_10_5           38
+#define R_LOONGARCH_SOP_POP_32_U_10_12          39
+#define R_LOONGARCH_SOP_POP_32_S_10_12          40
+#define R_LOONGARCH_SOP_POP_32_S_10_16          41
+#define R_LOONGARCH_SOP_POP_32_S_10_16_S2       42
+#define R_LOONGARCH_SOP_POP_32_S_5_20           43
+#define R_LOONGARCH_SOP_POP_32_S_0_5_10_16_S2   44
+#define R_LOONGARCH_SOP_POP_32_S_0_10_10_16_S2  45
+#define R_LOONGARCH_SOP_POP_32_U                46
+#define R_LOONGARCH_ADD8                        47
+#define R_LOONGARCH_ADD16                       48
+#define R_LOONGARCH_ADD24                       49
+#define R_LOONGARCH_ADD32                       50
+#define R_LOONGARCH_ADD64                       51
+#define R_LOONGARCH_SUB8                        52
+#define R_LOONGARCH_SUB16                       53
+#define R_LOONGARCH_SUB24                       54
+#define R_LOONGARCH_SUB32                       55
+#define R_LOONGARCH_SUB64                       56
+#define R_LOONGARCH_GNU_VTINHERIT               57
+#define R_LOONGARCH_GNU_VTENTRY                 58
 
 #ifdef __cplusplus
 }
